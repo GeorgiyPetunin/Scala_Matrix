@@ -77,13 +77,14 @@ class Matrix(matrix : List[List[Double]]) {
   def /(value : Int) : Matrix = {
     toMatrix(_matrix.map(_.map(_ / value)))
   }
-//  def TrueMultiply(matrix : Matrix) : Unit = {
-//    breakable{
-//      if(Column == matrix.Rows)
-//        (_matrix, matrix).swap
-//      else if(Column != matrix.Rows || Rows != matrix.Column)
-//        break
-//    }
-//  }
+  
+ def TrueMultiply(matrix : Matrix) : Unit = {
+   breakable{
+     if(Column == matrix.Rows)
+       (_matrix, matrix).swap
+     else if(Column != matrix.Rows || Rows != matrix.Column)
+       break
+   }
+ }
 }
 
